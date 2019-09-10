@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top ">
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/orders" > Orders</a>
+        </li>
+    </ul>
+    <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/users/signout'> SignOut </a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    <br><br><br><br><br>
+
+<div  class="container" *ngFor="let product of products">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+      <div class="card" style="width: 18rem;" appBorder >
+        <img [src]="product.imgUrl" class="card-img-top hgt" alt="..." (click)="detailView(product.id)">
+        <div class="card-body">
+          <h3 class="card-title" style="color: rgb(0, 217, 255); font-weight: bold">{{product.brand | uppercase}}</h3>
+          <p class="card-text" style="color: rgba(248, 0, 0, 0.842); font-weight: bold"> {{product.name}} </p>
+          <p class="card-text" style="color: orange; font-weight: bold"> {{product.price | currency:"₹"}} </p>
+          <button  class="btn btn-primary" (click)="order(product)">Order Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="jumbotron">
+        {{product.description}}
+
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

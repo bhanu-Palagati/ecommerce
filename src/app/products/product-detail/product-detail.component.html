@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+        <img [src]="product.imgUrl" class="card-img-top hgt" alt="..." style="height: 850px">
+    </div>
+    <div class="col-sm-9 jumbotron text-center">
+        <h1 style="color: rgb(0, 217, 255); font-weight: bold ">Brand: {{product.brand | uppercase}}</h1>
+        <h2 style="color: rgba(248, 0, 0, 0.842);"> Device: {{product.name}}</h2>
+        <h3 style="color: orange;">Price: {{product.price | currency:"₹"}}</h3>
+        {{product.description}}
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success" (click)="order()">Order Now</button> 
+    <button class="btn btn-warning"(click)="back()"> Go to List</button>
+  </div>
+</div>
